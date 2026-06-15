@@ -30,6 +30,17 @@ python app.py
 
 3. Visit `http://127.0.0.1:5000` in your browser.
 
+## Continuous Integration
+
+This repository includes a GitHub Actions workflow at `.github/workflows/python-app.yml`.
+The workflow:
+
+- checks out the code
+- sets up Python 3.12
+- installs dependencies
+- verifies Python syntax with `py_compile`
+- performs a basic smoke test by starting `app.py` and checking the homepage
+
 ## SQL Notes
 
 - The MySQL/MariaDB-style `schema.sql` contains the database tables, triggers, and stored procedures as requested.
