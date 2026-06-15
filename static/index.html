@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="app-shell">
+        <header>
+            <h1>Library Management System</h1>
+            <p>View books, issue and return items, and run library reports.</p>
+        </header>
+
+        <section class="card" id="book-list-card">
+            <h2>Available Books</h2>
+            <button onclick="loadBooks()">Refresh Books</button>
+            <div id="book-list"></div>
+        </section>
+
+        <section class="card">
+            <h2>Issue a Book</h2>
+            <form id="issue-form">
+                <label>Member ID <input name="member_id" required /></label>
+                <label>Book ID <input name="book_id" required /></label>
+                <label>Issue Date <input name="issue_date" type="date" /></label>
+                <button type="submit">Issue Book</button>
+            </form>
+            <div id="issue-result"></div>
+        </section>
+
+        <section class="card">
+            <h2>Return a Book</h2>
+            <form id="return-form">
+                <label>Issue ID <input name="issue_id" required /></label>
+                <label>Return Date <input name="return_date" type="date" /></label>
+                <button type="submit">Return Book</button>
+            </form>
+            <div id="return-result"></div>
+        </section>
+
+        <section class="card">
+            <h2>Prebuilt Reports</h2>
+            <button onclick="loadReport('categories')">Category Counts</button>
+            <button onclick="loadReport('over-average')">Books Over Avg Price</button>
+            <button onclick="loadReport('never-issued')">Books Never Issued</button>
+            <div id="report-output"></div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
